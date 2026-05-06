@@ -47,7 +47,7 @@ function initReduceStatusGroup() {
 		};
 	});
 
-	// console.log(orderStatus);
+	console.log("Order Status:", orderStatus);
 
 	const tickets = [
 		{ id: 1, title: "Login form not submitting", priority: "high", status: "open", minutesOpen: 45 },
