@@ -78,7 +78,7 @@ function initTransformRefactor() {
 		return acc;
 	}, {});
 
-	console.log(reduceDogBreeds);
+	// console.log(reduceDogBreeds);
 
 	const mappedDogBreeds = Object.entries(reduceDogBreeds).map(([heading, { list }]) => {
 		return {
@@ -94,7 +94,37 @@ function initTransformRefactor() {
 		};
 	});
 
-	console.log(mappedDogBreeds);
+	// console.log(mappedDogBreeds);
+	const root = document.querySelector(".breed_list");
+	if (!root) return;
+
+	mappedDogBreeds.forEach((heading) => {
+		const article = document.createElement("article");
+		article.classList.add("article");
+
+		const h2 = document.createElement("h2");
+		h2.classList.add("secondary_heading");
+		h2.textContent = heading.heading;
+
+		const ul = document.createElement("ul");
+		ul.classList.add("list_items");
+
+		heading.list.forEach((item) => {
+			const li = document.createElement("li");
+			const link = document.createElement("a");
+
+			if (item.count > 0) {
+				link.href = item.slug;
+				link.textContent = item.breed;
+				li.append(link);
+			} else {
+				li.textContent = item.breed;
+			}
+			ul.append(li);
+		});
+		article.append(h2, ul);
+		root.append(article);
+	});
 
 	return {
 		reduceDogBreeds,

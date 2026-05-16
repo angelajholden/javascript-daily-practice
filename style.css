@@ -1,0 +1,93 @@
+/*
+.lato-regular {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+*/
+
+:root {
+	--white: #fff;
+	--black: #222;
+	--gray: #eaeaea;
+	--lt-gray: #f8f8f8;
+	--blue: #4241c5;
+}
+
+html {
+	box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+body {
+	padding: 0;
+	margin: 0;
+	font-family: "Lato", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	font-size: 100%;
+	line-height: 1.65;
+	color: var(--black);
+	background-color: var(--white);
+}
+
+a {
+	color: var(--blue);
+	text-decoration-color: var(--blue);
+	transition: text-decoration 300ms ease-in-out;
+}
+
+a:focus,
+a:hover,
+a:active {
+	text-decoration-color: transparent;
+}
+
+.wrap {
+	max-width: 75rem;
+	margin: 0 auto;
+	padding: 0 1rem;
+}
+
+.section {
+	padding: 1rem 0;
+}
+
+.breed_list {
+	columns: 3 auto;
+}
+
+.breed_list .article {
+	break-inside: avoid;
+	padding: 0 0 2rem;
+}
+
+.secondary_heading {
+	margin: 0 0 1rem;
+}
+
+.list_items {
+	padding: 0;
+	margin: 0;
+	list-style-type: none;
+}
+
+.list_items li {
+	margin: 0.75rem 0;
+	line-height: 1.25;
+}
+
+@media (max-width: 700px) {
+	.breed_list {
+		columns: 2 auto;
+	}
+
+	.breed_list .article {
+		padding: 0 0 1rem;
+	}
+}
