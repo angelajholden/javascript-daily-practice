@@ -96,9 +96,10 @@ function initSortMapRender() {
 		}
 		size.textContent = newSize;
 
-		const date = document.createElement("time");
 		let dateStyle = new Date(item.updatedAt);
 		dateStyle = dateStyle.toLocaleString("en-US", { dateStyle: "medium" });
+
+		const date = document.createElement("time");
 		date.dateTime = item.updatedAt.slice(0, 10);
 		date.textContent = dateStyle;
 
