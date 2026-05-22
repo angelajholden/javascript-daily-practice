@@ -91,3 +91,21 @@ a:active {
 		padding: 0 0 1rem;
 	}
 }
+
+/* Updated Files */
+.updated_files {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	align-items: stretch;
+	gap: 2rem;
+}
+
+.updated_files + p {
+	text-align: center;
+}
+
+.files {
+	padding: 1rem 2rem;
+	border: 2px solid var(--gray);
+}
