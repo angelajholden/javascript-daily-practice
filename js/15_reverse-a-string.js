@@ -4,8 +4,9 @@ function reverseAString(str) {
 	string = string.split("");
 	string = string.toReversed();
 	string = string.join("");
-	// console.log(string);
+	console.log("toReversed Method: ", string);
 
+	// backwards for loop
 	let reversed = ""; // initialize reversed
 	// i is equal to the length of the str minus 1
 	// run the loop if i is greater than or equal to 0
@@ -15,19 +16,20 @@ function reverseAString(str) {
 		// reversed = reversed + str[i]
 		// str[i] is each letter
 	}
-	// console.log(reversed);
+	console.log("Backwards Loop: ", reversed);
 
+	// for...of prepend character
 	let word = ""; // initialize word as empty string
+	// define char, and loop through each character
 	for (const char of str) {
-		// define char and loop through each character
-
 		word = char + word;
 		// put each new character in front of the string built so far
 	}
-	console.log(word);
+	console.log("Prepend Char: ", word);
 
 	// return all the things
 	return {
+		string,
 		reversed,
 		word,
 	};
