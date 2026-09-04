@@ -180,5 +180,20 @@ function initPracticeDSA() {
 		}
 		console.log(newArrayWithWords(words));
 	}
+
+	{
+		const numbers = [3, 8, 2, 10, 5];
+
+		// Add together only the numbers greater than 4.
+
+		let total = 0;
+
+		for (const num of numbers) {
+			if (num > 4) {
+				total += num;
+			}
+		}
+		console.log(total);
+	}
 }
 initPracticeDSA();
