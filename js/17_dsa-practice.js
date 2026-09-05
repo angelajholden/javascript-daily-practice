@@ -195,5 +195,159 @@ function initPracticeDSA() {
 		}
 		console.log(total);
 	}
+
+	{
+		// Best So Far Pattern
+		const numbers = [8, 3, 11, 5, 6];
+
+		// find the smallest number
+		//  Math.min() not allowed
+
+		let smallest = numbers[0];
+		for (const num of numbers) {
+			if (num < smallest) {
+				smallest = num;
+			}
+		}
+		console.log(smallest);
+	}
+
+	{
+		// Running Count Pattern
+		const numbers = [2, 5, 8, 11, 4, 13];
+
+		// how many numbers are greater than 6?
+
+		let count = 0;
+		for (const num of numbers) {
+			if (num > 6) {
+				count++;
+			}
+		}
+		console.log(count);
+	}
+
+	{
+		// Running Total Pattern
+		const numbers = [4, 7, 2, 9];
+
+		// add all the numbers together
+
+		let total = 0;
+		for (const num of numbers) {
+			total += num;
+		}
+		console.log(total);
+	}
+
+	{
+		// Build a New Result Array Pattern
+		const numbers = [3, 7, 2, 8, 5];
+
+		// build a new array with numbers greater than 4
+
+		let array = [];
+		for (const num of numbers) {
+			if (num > 4) {
+				array.push(num);
+			}
+		}
+		console.log(array);
+	}
+
+	{
+		// Seen Before Patten with Set
+		// Duplicate Detection with a Set
+		const numbers = [4, 7, 2, 7, 9];
+
+		// use a function and return true
+		// as soon as you find a duplicate
+
+		function returnTrueIfDupe(numbers) {
+			let seen = new Set();
+			for (const num of numbers) {
+				if (seen.has(num)) {
+					return true;
+				}
+				seen.add(num);
+			}
+			return false;
+		}
+		console.log(returnTrueIfDupe(numbers));
+	}
+
+	{
+		// Frequency Counter Pattern
+		const words = ["cat", "dog", "cat", "bird", "dog", "cat"];
+
+		// count how many times each word appears
+		let frequency = {};
+		for (const word of words) {
+			if (frequency[word]) {
+				frequency[word]++;
+			} else {
+				frequency[word] = 1;
+			}
+		}
+		console.log(frequency);
+	}
+
+	{
+		// Frequency Counter Pattern
+		const colors = ["red", "blue", "red", "green", "blue", "red"];
+
+		// count each color
+		let counter = {};
+		for (const color of colors) {
+			if (counter[color]) {
+				counter[color]++;
+			} else {
+				counter[color] = 1;
+			}
+		}
+		console.log(counter);
+	}
+
+	{
+		// Frequency Counter Pattern
+		const letters = ["a", "b", "a", "c", "b", "a", "d"];
+
+		// count the number of times each letter appears
+		let counter = {};
+		for (const letter of letters) {
+			if (counter[letter]) {
+				counter[letter]++;
+			} else {
+				counter[letter] = 1;
+			}
+		}
+		console.log(counter);
+	}
+
+	{
+		// Frequnecy Counter & Best So Far Pattern
+		const fruits = ["apple", "banana", "apple", "orange", "banana", "apple"];
+
+		// find the word that appears most often
+		// separate problems = separate jobs (steps)
+		let highestCount = 0;
+		let frequentWord = null;
+		let count = {};
+		for (const fruit of fruits) {
+			// frequency counter, step 1
+			if (count[fruit]) {
+				count[fruit]++;
+			} else {
+				count[fruit] = 1;
+			}
+			// best so far, step 2
+			// highestCount is assigned a new value, it doesn't increment by 1
+			if (count[fruit] > highestCount) {
+				highestCount = count[fruit];
+				frequentWord = fruit;
+			}
+		}
+		console.log(count, frequentWord);
+	}
 }
 initPracticeDSA();
