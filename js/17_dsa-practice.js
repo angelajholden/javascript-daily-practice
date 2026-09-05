@@ -14,7 +14,7 @@ function initPracticeDSA() {
 			}
 		}
 
-		console.log(largest);
+		// console.log(largest);
 	}
 
 	{
@@ -30,7 +30,7 @@ function initPracticeDSA() {
 				largest = num;
 			}
 		}
-		console.log(largest);
+		// console.log(largest);
 	}
 
 	{
@@ -45,7 +45,7 @@ function initPracticeDSA() {
 				count++;
 			}
 		}
-		console.log(count);
+		// console.log(count);
 	}
 
 	{
@@ -59,7 +59,7 @@ function initPracticeDSA() {
 			total += num;
 		}
 
-		console.log(total);
+		// console.log(total);
 	}
 
 	{
@@ -76,7 +76,7 @@ function initPracticeDSA() {
 			}
 			seen.add(num);
 		}
-		console.log(dupes);
+		// console.log(dupes);
 	}
 
 	{
@@ -91,7 +91,7 @@ function initPracticeDSA() {
 			}
 			return false;
 		}
-		console.log(hasDuplicate(numbers));
+		// console.log(hasDuplicate(numbers));
 	}
 
 	{
@@ -108,7 +108,7 @@ function initPracticeDSA() {
 			}
 			return false;
 		}
-		console.log(arrayContains(numbers));
+		// console.log(arrayContains(numbers));
 	}
 
 	{
@@ -125,7 +125,7 @@ function initPracticeDSA() {
 			}
 			return null;
 		}
-		console.log(returnOddNumber(numbers));
+		// console.log(returnOddNumber(numbers));
 	}
 
 	{
@@ -142,7 +142,7 @@ function initPracticeDSA() {
 			}
 			return null;
 		}
-		console.log(returnFirstWord(words));
+		// console.log(returnFirstWord(words));
 	}
 
 	{
@@ -160,7 +160,7 @@ function initPracticeDSA() {
 			}
 			return array;
 		}
-		console.log(buildNewArray(numbers));
+		// console.log(buildNewArray(numbers));
 	}
 
 	{
@@ -178,7 +178,7 @@ function initPracticeDSA() {
 			}
 			return array;
 		}
-		console.log(newArrayWithWords(words));
+		// console.log(newArrayWithWords(words));
 	}
 
 	{
@@ -193,7 +193,7 @@ function initPracticeDSA() {
 				total += num;
 			}
 		}
-		console.log(total);
+		// console.log(total);
 	}
 
 	{
@@ -209,7 +209,7 @@ function initPracticeDSA() {
 				smallest = num;
 			}
 		}
-		console.log(smallest);
+		// console.log(smallest);
 	}
 
 	{
@@ -224,7 +224,7 @@ function initPracticeDSA() {
 				count++;
 			}
 		}
-		console.log(count);
+		// console.log(count);
 	}
 
 	{
@@ -237,7 +237,7 @@ function initPracticeDSA() {
 		for (const num of numbers) {
 			total += num;
 		}
-		console.log(total);
+		// console.log(total);
 	}
 
 	{
@@ -252,7 +252,7 @@ function initPracticeDSA() {
 				array.push(num);
 			}
 		}
-		console.log(array);
+		// console.log(array);
 	}
 
 	{
@@ -273,7 +273,7 @@ function initPracticeDSA() {
 			}
 			return false;
 		}
-		console.log(returnTrueIfDupe(numbers));
+		// console.log(returnTrueIfDupe(numbers));
 	}
 
 	{
@@ -289,7 +289,7 @@ function initPracticeDSA() {
 				frequency[word] = 1;
 			}
 		}
-		console.log(frequency);
+		// console.log(frequency);
 	}
 
 	{
@@ -305,7 +305,7 @@ function initPracticeDSA() {
 				counter[color] = 1;
 			}
 		}
-		console.log(counter);
+		// console.log(counter);
 	}
 
 	{
@@ -321,7 +321,7 @@ function initPracticeDSA() {
 				counter[letter] = 1;
 			}
 		}
-		console.log(counter);
+		// console.log(counter);
 	}
 
 	{
@@ -347,7 +347,194 @@ function initPracticeDSA() {
 				frequentWord = fruit;
 			}
 		}
-		console.log(count, frequentWord);
+		// console.log(count, frequentWord);
+	}
+
+	{
+		// Best So Far Pattern
+		const numbers = [9, 4, 12, 3, 7];
+
+		// find the largest number
+		//  no Math.max()
+
+		let largest = numbers[0];
+		for (const num of numbers) {
+			if (num > largest) {
+				largest = num;
+			}
+		}
+		// console.log(largest);
+	}
+
+	{
+		// Best So Far Pattern
+		const numbers = [2, 9, 4, 11, 6, 13];
+
+		// count how many numbers are odd
+
+		let count = 0;
+		for (const num of numbers) {
+			if (num % 2 !== 0) {
+				count++;
+			}
+		}
+		// console.log(count);
+	}
+
+	{
+		// Frequency Count Pattern
+		const colors = ["red", "blue", "red", "green", "blue", "red"];
+
+		// count how many times each color appears
+		let count = {};
+		for (const color of colors) {
+			if (count[color]) {
+				count[color]++;
+			} else {
+				count[color] = 1;
+			}
+		}
+		// console.log(count);
+	}
+
+	{
+		// Find the largest even number
+
+		const numbers = [3, 8, 2, 10, 5, 12];
+		let largest = numbers[0];
+		for (const num of numbers) {
+			if (num % 2 === 0 && num > largest) {
+				largest = num;
+			}
+		}
+		// console.log(largest);
+	}
+
+	{
+		// Find the smallest odd number
+
+		const numbers = [14, 3, 9, 6, 11, 8];
+
+		let smallest = null;
+		for (const num of numbers) {
+			if (num % 2 !== 0 && (smallest === null || num < smallest)) {
+				smallest = num;
+			}
+		}
+		// console.log(smallest);
+	}
+
+	{
+		// Qualifying Condition & Best So Far Pattern
+
+		const numbers = [5, 12, 7, 18, 3, 14];
+
+		// find the largest number less than 15
+
+		let largest = null;
+		for (const num of numbers) {
+			if (num < 15 && (largest === null || num > largest)) {
+				largest = num;
+			}
+		}
+		// console.log(largest);
+	}
+
+	{
+		// Find the smallest even number in the array
+
+		const numbers = [7, 12, 5, 18, 9, 14, 3];
+		let smallest = null;
+		for (const num of numbers) {
+			if (num % 2 === 0 && (smallest === null || num < smallest)) {
+				smallest = num;
+			}
+		}
+		// console.log(smallest);
+	}
+
+	{
+		// Find the index of the first even number.
+
+		const numbers = [7, 5, 12, 9, 4];
+
+		function getFirstIndex(numbers) {
+			let firstIndex = null;
+			for (let i = 0; i < numbers.length; i++) {
+				if (numbers[i] % 2 === 0) {
+					// console.log(numbers[i]);
+					firstIndex = i;
+					return firstIndex;
+				}
+			}
+			return null;
+		}
+		// console.log(getFirstIndex(numbers));
+	}
+
+	{
+		// Find the index of the first even number.
+		const numbers = [9, 7, 5, 8, 3];
+
+		function findFirstEven(numbers) {
+			// let firstEven = null;
+			for (let i = 0; i < numbers.length; i++) {
+				if (numbers[i] % 2 === 0) {
+					// firstEven = i;
+					return i;
+				}
+			}
+			return null;
+		}
+		// console.log(findFirstEven(numbers));
+	}
+
+	{
+		// Find the index of the first number greater than 8.
+		const numbers = [4, 9, 6, 2, 11];
+		function firstGreaterEight(numbers) {
+			for (let i = 0; i < numbers.length; i++) {
+				if (numbers[i] > 8) {
+					return i;
+				}
+			}
+			return null;
+		}
+		// console.log(firstGreaterEight(numbers));
+	}
+
+	{
+		// Find the index of the last even number.
+		const numbers = [4, 9, 6, 12, 5, 8, 5];
+
+		function getLastEven(numbers) {
+			let lastEven = null;
+			for (let i = 0; i < numbers.length; i++) {
+				if (numbers[i] % 2 === 0) {
+					lastEven = i;
+				}
+			}
+			return lastEven;
+		}
+		// console.log(getLastEven(numbers));
+		getLastEven(numbers);
+	}
+
+	{
+		// Find the index of the largest even number.
+		const numbers = [3, 10, 7, 14, 5, 8];
+		function largestEvenNumber(numbers) {
+			let largest = null;
+			let largestIndex = null;
+			for (let i = 0; i < numbers.length; i++) {
+				if (numbers[i] % 2 === 0 && (largest === null || numbers[i] > largest)) {
+					largest = numbers[i];
+					largestIndex = i;
+				}
+			}
+			return largestIndex;
+		}
+		console.log(largestEvenNumber(numbers));
 	}
 }
 initPracticeDSA();
