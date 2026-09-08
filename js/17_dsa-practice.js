@@ -630,7 +630,154 @@ function initPracticeDSA() {
 				array.push(word);
 			}
 		}
-		console.log(array);
+		// console.log(array);
+	}
+
+	{
+		// Add together only the numbers greater than 8.
+		const numbers = [6, 13, 4, 9, 16, 7];
+		let total = 0;
+		for (const num of numbers) {
+			if (num > 8) {
+				total += num;
+			}
+		}
+		// console.log(total);
+	}
+
+	{
+		// Count how many times each number appears.
+		const numbers = [4, 7, 4, 9, 7, 4];
+		let count = {};
+		for (const num of numbers) {
+			if (count[num]) {
+				count[num]++;
+			} else {
+				count[num] = 1;
+			}
+		}
+		// console.log(count);
+	}
+
+	{
+		// Count how many words have more than 3 letters.
+		const words = ["apple", "cat", "banana", "dog", "elephant"];
+		let count = 0;
+		for (const word of words) {
+			if (word.length > 3) {
+				count++;
+			}
+		}
+		// console.log(count);
+	}
+
+	{
+		// Find the index of the first number that appears more than once.
+		const numbers = [5, 12, 7, 12, 9, 4, 12, 6];
+		function findFirstNumber(numbers) {
+			let firstIndex = null;
+			let seen = new Set();
+			for (let i = 0; i < numbers.length; i++) {
+				if (seen.has(numbers[i])) {
+					firstIndex = i;
+					return firstIndex;
+				}
+				seen.add(numbers[i]);
+			}
+			return null;
+		}
+		// console.log(findFirstNumber(numbers));
+	}
+
+	{
+		// Find the first number that appears exactly 3 times.
+		const numbers = [4, 7, 4, 9, 7, 4, 2];
+		function findTheFirstNumber(numbers) {
+			let count = {};
+			for (const num of numbers) {
+				if (count[num]) {
+					count[num]++;
+					if (count[num] === 3) return `The first number to appear 3 times is ${num}`;
+				} else {
+					count[num] = 1;
+				}
+			}
+			return null;
+		}
+		// console.log(findTheFirstNumber(numbers));
+	}
+
+	{
+		// Return the first number that is encountered for the 4th time.
+		const numbers = [2, 5, 2, 7, 5, 2, 5, 5];
+		function returnFirstNumber(numbers) {
+			let count = {};
+			for (const num of numbers) {
+				if (count[num]) {
+					count[num]++;
+					if (count[num] === 4) return num;
+				} else {
+					count[num] = 1;
+				}
+			}
+			return null;
+		}
+		// console.log(returnFirstNumber(numbers));
+	}
+
+	{
+		// Return the first number that reaches a count of 4, and also return the index where that happens.
+		const numbers = [8, 3, 8, 5, 3, 8, 7, 3, 3];
+		function returnNumberAndIndex(numbers) {
+			let count = {};
+			for (let i = 0; i < numbers.length; i++) {
+				let num = numbers[i];
+				if (count[num]) {
+					count[num]++;
+					if (count[num] === 4) return { number: num, index: i };
+				} else {
+					count[num] = 1;
+				}
+			}
+			return null;
+		}
+		// console.log(returnNumberAndIndex(numbers));
+	}
+
+	{
+		// Return an object containing the first number that reaches a count of 3, and the index where it happens.
+		const numbers = [6, 2, 6, 9, 2, 6, 2];
+		function returnAnObject(numbers) {
+			let count = {};
+			for (let i = 0; i < numbers.length; i++) {
+				let num = numbers[i];
+				if (count[num]) {
+					count[num]++;
+					if (count[num] === 3) return { number: num, index: i };
+				} else {
+					count[num] = 1;
+				}
+			}
+			return null;
+		}
+		// console.log(returnAnObject(numbers));
+	}
+
+	{
+		// Return the indexes of the two numbers that add up to the target.
+		const numbers = [2, 7, 11, 15];
+		const target = 9;
+		function returnIndexesOfTwoNumbers(numbers, target) {
+			for (let i = 0; i < numbers.length; i++) {
+				for (let x = i + 1; x < numbers.length; x++) {
+					if (numbers[i] + numbers[x] === target) {
+						return [i, x];
+					}
+				}
+			}
+			return null;
+		}
+		// console.log(returnIndexesOfTwoNumbers(numbers, target));
 	}
 }
 initPracticeDSA();
