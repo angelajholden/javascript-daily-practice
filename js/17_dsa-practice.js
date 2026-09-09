@@ -779,5 +779,146 @@ function initPracticeDSA() {
 		}
 		// console.log(returnIndexesOfTwoNumbers(numbers, target));
 	}
+	{
+		// Return the indexes of the two numbers that add up to the target.
+
+		const numbers = [3, 8, 4, 11];
+		const target = 12;
+		function returnIndexesOfTwo(numbers, target) {
+			for (let i = 0; i < numbers.length; i++) {
+				for (let x = i + 1; x < numbers.length; x++) {
+					if (target === numbers[i] + numbers[x]) {
+						return [i, x];
+					}
+				}
+			}
+			return null;
+		}
+		// console.log(returnIndexesOfTwo(numbers, target));
+	}
+
+	{
+		// Return the indexes of the two numbers that add up to the target.
+
+		const numbers = [5, 9, 2, 7];
+		const target = 14;
+		function returnTheIndexes(numbers, target) {
+			for (let i = 0; i < numbers.length; i++) {
+				for (let x = i + 1; x < numbers.length; x++) {
+					let first = numbers[i];
+					let second = numbers[x];
+					if (target === first + second) {
+						return [i, x];
+					}
+				}
+			}
+			return null;
+		}
+		// console.log(returnTheIndexes(numbers, target));
+	}
+
+	{
+		// Return the index of the first number that is encountered for the 3rd time.
+		const numbers = [4, 7, 4, 9, 2, 7, 4];
+		function returnTheFirst(numbers) {
+			let count = {};
+			for (let i = 0; i < numbers.length; i++) {
+				let num = numbers[i];
+				if (count[num]) {
+					count[num]++;
+					if (count[num] === 3) {
+						return i;
+					}
+				} else {
+					count[num] = 1;
+				}
+			}
+			return null;
+		}
+		// console.log(returnTheFirst(numbers));
+	}
+
+	{
+		// Return an object containing the first number that reaches a count of 4 and the index where that happens.
+
+		const numbers = [3, 8, 3, 5, 8, 3, 8, 8];
+		function returnAnObject(numbers) {
+			let count = {};
+			for (let i = 0; i < numbers.length; i++) {
+				let num = numbers[i];
+				if (count[num]) {
+					count[num]++;
+					if (count[num] === 4) {
+						return {
+							number: num,
+							index: i,
+						};
+					}
+				} else {
+					count[num] = 1;
+				}
+			}
+			return null;
+		}
+		// console.log(returnAnObject(numbers));
+	}
+
+	{
+		// Return an object containing the name and index of the user with the highest score.
+		const users = [
+			{ id: 1, name: "Ada", score: 82 },
+			{ id: 2, name: "Grace", score: 91 },
+			{ id: 3, name: "Linus", score: 76 },
+			{ id: 4, name: "Margaret", score: 88 },
+		];
+
+		function getHighestScore(users) {
+			let highest = {};
+			let grade = null;
+			for (let i = 0; i < users.length; i++) {
+				let currentScore = users[i].score;
+				let name = users[i].name;
+				if (grade === null || currentScore > grade) {
+					grade = currentScore;
+					highest = {
+						name: name,
+						index: i,
+					};
+				}
+			}
+			return highest;
+		}
+		// console.log(getHighestScore(users));
+	}
+
+	{
+		// Return an object containing the name and index of the cheapest product that is in stock.
+		const products = [
+			{ id: 101, name: "Keyboard", price: 89, inStock: true },
+			{ id: 102, name: "Mouse", price: 45, inStock: false },
+			{ id: 103, name: "Monitor", price: 199, inStock: true },
+			{ id: 104, name: "Webcam", price: 79, inStock: true },
+		];
+
+		function findTheCheapestProducts(products) {
+			let cheapest = {};
+			let cheapestPrice = null;
+			for (let i = 0; i < products.length; i++) {
+				let inStock = products[i].inStock;
+				let name = products[i].name;
+				let price = products[i].price;
+				if ((cheapestPrice === null || price < cheapestPrice) && inStock) {
+					// reassign the cheapest price to the current price
+					cheapestPrice = price;
+					cheapest = {
+						name: name,
+						index: i,
+					};
+				}
+			}
+			return cheapest;
+		}
+		// console.log(findTheCheapestProducts(products));
+	}
 }
 initPracticeDSA();
