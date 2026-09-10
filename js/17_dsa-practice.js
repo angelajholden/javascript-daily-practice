@@ -920,5 +920,100 @@ function initPracticeDSA() {
 		}
 		// console.log(findTheCheapestProducts(products));
 	}
+
+	{
+		// Return an object containing the name and index of the active employee with the highest salary.
+		const employees = [
+			{ id: 1, name: "Maya", salary: 72000, active: true },
+			{ id: 2, name: "Noah", salary: 68000, active: false },
+			{ id: 3, name: "Priya", salary: 81000, active: true },
+			{ id: 4, name: "Eli", salary: 76000, active: true },
+		];
+
+		const employees2 = [
+			{ id: 1, name: "Maya", salary: 72000, active: true },
+			{ id: 2, name: "Noah", salary: 95000, active: false },
+			{ id: 3, name: "Priya", salary: 81000, active: true },
+			{ id: 4, name: "Eli", salary: 76000, active: true },
+		];
+
+		const employees3 = [
+			{ id: 1, name: "Maya", salary: 99000, active: true },
+			{ id: 2, name: "Noah", salary: 68000, active: true },
+			{ id: 3, name: "Priya", salary: 81000, active: true },
+			{ id: 4, name: "Eli", salary: 76000, active: true },
+		];
+
+		const employees4 = [
+			{ id: 1, name: "Maya", salary: 72000, active: false },
+			{ id: 2, name: "Noah", salary: 68000, active: false },
+		];
+
+		function returnHighestSalary(employees) {
+			let highest = {};
+			let highestSalary = null;
+			for (let i = 0; i < employees.length; i++) {
+				let currentSalary = employees[i].salary;
+				let name = employees[i].name;
+				let active = employees[i].active;
+				if (active && (highestSalary === null || currentSalary > highestSalary)) {
+					highestSalary = currentSalary;
+					highest = {
+						name,
+						index: i,
+					};
+				}
+			}
+			return highest;
+		}
+		// console.log(returnHighestSalary(employees));
+		// console.log(returnHighestSalary(employees2));
+		// console.log(returnHighestSalary(employees3));
+		// console.log(returnHighestSalary(employees4));
+	}
+
+	{
+		// Return an object containing the title and index of the open ticket with the highest priority.
+
+		const tickets = [
+			{ id: 301, title: "Login issue", priority: 2, open: true },
+			{ id: 302, title: "Broken image", priority: 1, open: false },
+			{ id: 303, title: "Checkout error", priority: 5, open: true },
+			{ id: 304, title: "Slow page", priority: 3, open: true },
+		];
+
+		const tickets2 = [
+			{ id: 301, title: "Login issue", priority: 2, open: true },
+			{ id: 302, title: "Broken image", priority: 99, open: false },
+			{ id: 303, title: "Checkout error", priority: 5, open: true },
+			{ id: 304, title: "Slow page", priority: 3, open: true },
+		];
+
+		const tickets3 = [
+			{ id: 301, title: "Login issue", priority: 9, open: true },
+			{ id: 302, title: "Broken image", priority: 4, open: true },
+			{ id: 303, title: "Checkout error", priority: 7, open: true },
+			{ id: 304, title: "Slow page", priority: 2, open: false },
+		];
+
+		function returnOpenTicket(tickets) {
+			let openTicket = {};
+			let highestPriority = null;
+			for (let i = 0; i < tickets.length; i++) {
+				let title = tickets[i].title;
+				let open = tickets[i].open;
+				let currentPriority = tickets[i].priority;
+				if (open && (highestPriority === null || currentPriority > highestPriority)) {
+					highestPriority = currentPriority;
+					openTicket = {
+						title,
+						index: i,
+					};
+				}
+			}
+			return openTicket;
+		}
+		console.log(returnOpenTicket(tickets3));
+	}
 }
 initPracticeDSA();
