@@ -1013,7 +1013,174 @@ function initPracticeDSA() {
 			}
 			return openTicket;
 		}
-		console.log(returnOpenTicket(tickets3));
+		// console.log(returnOpenTicket(tickets3));
+	}
+
+	{
+		// Return an object containing the name and index of the featured product with the highest rating.
+
+		const products = [
+			{ id: 1, name: "Laptop", rating: 4.6, featured: true },
+			{ id: 2, name: "Mouse", rating: 4.9, featured: false },
+			{ id: 3, name: "Keyboard", rating: 4.8, featured: true },
+			{ id: 4, name: "Monitor", rating: 4.3, featured: true },
+		];
+
+		const products2 = [
+			{ id: 1, name: "Laptop", rating: 4.9, featured: false },
+			{ id: 2, name: "Mouse", rating: 4.7, featured: true },
+			{ id: 3, name: "Keyboard", rating: 4.8, featured: true },
+			{ id: 4, name: "Monitor", rating: 5.0, featured: false },
+		];
+
+		const products3 = [
+			{ id: 1, name: "Laptop", rating: 4.9, featured: true },
+			{ id: 2, name: "Mouse", rating: 4.7, featured: true },
+			{ id: 3, name: "Keyboard", rating: 4.8, featured: true },
+			{ id: 4, name: "Monitor", rating: 4.3, featured: false },
+		];
+
+		function returnAnObject(products) {
+			let featuredProduct = {};
+			let highestRating = null;
+			for (let i = 0; i < products.length; i++) {
+				let name = products[i].name;
+				let rating = products[i].rating;
+				let featured = products[i].featured;
+				if (featured && (highestRating === null || rating > highestRating)) {
+					highestRating = rating;
+					featuredProduct = {
+						name,
+						index: i,
+					};
+				}
+			}
+			return featuredProduct;
+		}
+		// console.log(returnAnObject(products3));
+	}
+
+	{
+		// Return an object containing the name and index of the first verified user with a score greater than 80.
+		const users = [
+			{ id: 1, name: "Maya", verified: false, score: 82 },
+			{ id: 2, name: "Noah", verified: true, score: 74 },
+			{ id: 3, name: "Priya", verified: true, score: 91 },
+			{ id: 4, name: "Eli", verified: true, score: 88 },
+		];
+
+		const users2 = [
+			{ id: 1, name: "Maya", verified: true, score: 92 },
+			{ id: 2, name: "Noah", verified: true, score: 74 },
+			{ id: 3, name: "Priya", verified: true, score: 91 },
+		];
+
+		const users3 = [
+			{ id: 1, name: "Maya", verified: false, score: 95 },
+			{ id: 2, name: "Noah", verified: true, score: 84 },
+			{ id: 3, name: "Priya", verified: true, score: 99 },
+		];
+
+		function earlyReturnUser(users) {
+			let verifiedUser = {};
+			for (let i = 0; i < users.length; i++) {
+				let name = users[i].name;
+				let score = users[i].score;
+				let verified = users[i].verified;
+				if (verified && score > 80) {
+					verifiedUser = {
+						name,
+						index: i,
+					};
+					return verifiedUser;
+				}
+			}
+			return null;
+		}
+		// console.log(earlyReturnUser(users));
+		// console.log(earlyReturnUser(users2));
+		// console.log(earlyReturnUser(users3));
+	}
+
+	{
+		// Return an object containing the email and index of the first account whose email has already appeared earlier in the array.
+
+		const accounts = [
+			{ id: 1, email: "maya@example.com", active: true },
+			{ id: 2, email: "noah@example.com", active: true },
+			{ id: 3, email: "maya@example.com", active: false },
+			{ id: 4, email: "priya@example.com", active: true },
+		];
+
+		const accounts2 = [
+			{ id: 1, email: "maya@example.com", active: true },
+			{ id: 2, email: "noah@example.com", active: true },
+			{ id: 3, email: "priya@example.com", active: false },
+			{ id: 4, email: "noah@example.com", active: true },
+		];
+
+		const accounts3 = [
+			{ id: 1, email: "maya@example.com", active: true },
+			{ id: 2, email: "maya@example.com", active: false },
+			{ id: 3, email: "priya@example.com", active: true },
+		];
+
+		const accounts4 = [
+			{ id: 1, email: "maya@example.com", active: true },
+			{ id: 2, email: "noah@example.com", active: true },
+			{ id: 3, email: "priya@example.com", active: false },
+		];
+
+		function returnFirstDupeEmail(accounts) {
+			let firstAccount = {};
+			let seen = new Set();
+			for (let i = 0; i < accounts.length; i++) {
+				let email = accounts[i].email;
+				if (seen.has(email)) {
+					firstAccount = {
+						email,
+						index: i,
+					};
+					return firstAccount;
+				}
+				seen.add(email);
+			}
+			return null;
+		}
+		// console.log(returnFirstDupeEmail(accounts));
+		// console.log(returnFirstDupeEmail(accounts2));
+		// console.log(returnFirstDupeEmail(accounts3));
+		// console.log(returnFirstDupeEmail(accounts4));
+	}
+
+	{
+		// Return an object containing the title and index of the first published post whose title has already appeared earlier in the array.
+
+		const posts = [
+			{ id: 1, title: "CSS Grid Tips", author: "Maya", published: true },
+			{ id: 2, title: "JavaScript Loops", author: "Noah", published: true },
+			{ id: 3, title: "CSS Grid Tips", author: "Priya", published: false },
+			{ id: 4, title: "Accessibility Basics", author: "Eli", published: true },
+		];
+
+		function returnFirstPost(posts) {
+			let firstPublishedPost = {};
+			let seen = new Set();
+			for (let i = 0; i < posts.length; i++) {
+				let title = posts[i].title;
+				let published = posts[i].published;
+				if (seen.has(title) && published) {
+					firstPublishedPost = {
+						title,
+						index: i,
+					};
+					return firstPublishedPost;
+				}
+				seen.add(title);
+			}
+			return null;
+		}
+		console.log(returnFirstPost(posts));
 	}
 }
 initPracticeDSA();
