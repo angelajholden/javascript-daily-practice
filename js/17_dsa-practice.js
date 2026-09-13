@@ -1180,7 +1180,94 @@ function initPracticeDSA() {
 			}
 			return null;
 		}
-		console.log(returnFirstPost(posts));
+		// console.log(returnFirstPost(posts));
+	}
+
+	{
+		// Return an object containing the name and index of the first applicant who is available and has at least 3 years of experience.
+
+		const applicants = [
+			{ id: 1, name: "Maya", experience: 2, available: true },
+			{ id: 2, name: "Noah", experience: 5, available: false },
+			{ id: 3, name: "Priya", experience: 4, available: true },
+			{ id: 4, name: "Eli", experience: 7, available: true },
+		];
+
+		function returnFirstAvailable(applicants) {
+			let firstAvailable = {};
+			for (let i = 0; i < applicants.length; i++) {
+				let available = applicants[i].available;
+				let name = applicants[i].name;
+				let exp = applicants[i].experience;
+				if (available && exp >= 3) {
+					firstAvailable = {
+						name,
+						index: i,
+					};
+					return firstAvailable;
+				}
+			}
+			return null;
+		}
+		// console.log(returnFirstAvailable(applicants));
+	}
+
+	{
+		// Return an object containing the email and index of the first approved submission whose email has already appeared earlier in the array.
+		const submissions = [
+			{ id: 1, email: "maya@example.com", approved: true },
+			{ id: 2, email: "noah@example.com", approved: true },
+			{ id: 3, email: "maya@example.com", approved: false },
+			{ id: 4, email: "priya@example.com", approved: true },
+			{ id: 5, email: "noah@example.com", approved: true },
+		];
+
+		function returnEmailSubmissions(submissions) {
+			let firstApproved = {};
+			let seen = new Set();
+			for (let i = 0; i < submissions.length; i++) {
+				let email = submissions[i].email;
+				let approved = submissions[i].approved;
+				if (approved && seen.has(email)) {
+					firstApproved = {
+						email,
+						index: i,
+					};
+					return firstApproved;
+				}
+				seen.add(email);
+			}
+			return null;
+		}
+		// console.log(returnEmailSubmissions(submissions));
+	}
+
+	{
+		// Return an array containing the indexes of the first pair of numbers that add up to the target.
+		const numbers = [4, 7, 1, 9, 3];
+		const target = 10;
+		const numbers2 = [5, 5, 2, 8];
+		const target2 = 10;
+		const numbers3 = [1, 4, 6, 3, 9];
+		const target3 = 12;
+		const numbers4 = [2, 4, 6, 8];
+		const target4 = 15;
+		function returnIndexes(numbers, target) {
+			for (let i = 0; i < numbers.length; i++) {
+				for (let x = i + 1; x < numbers.length; x++) {
+					let first = numbers[i];
+					let second = numbers[x];
+					if (first + second === target) {
+						return [i, x];
+					}
+				}
+			}
+			return null;
+		}
+		console.log(returnIndexes(numbers, target));
+		console.log(returnIndexes(numbers2, target2));
+		console.log(returnIndexes(numbers3, target3));
+		console.log(returnIndexes(numbers4, target4));
 	}
 }
 initPracticeDSA();
