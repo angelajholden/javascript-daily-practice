@@ -1264,10 +1264,187 @@ function initPracticeDSA() {
 			}
 			return null;
 		}
-		console.log(returnIndexes(numbers, target));
-		console.log(returnIndexes(numbers2, target2));
-		console.log(returnIndexes(numbers3, target3));
-		console.log(returnIndexes(numbers4, target4));
+		// console.log(returnIndexes(numbers, target));
+		// console.log(returnIndexes(numbers2, target2));
+		// console.log(returnIndexes(numbers3, target3));
+		// console.log(returnIndexes(numbers4, target4));
+	}
+
+	{
+		// Return an object containing the customer and index of the first paid order with a total greater than 100.
+		const orders = [
+			{ id: 1, customer: "Maya", total: 120, paid: true },
+			{ id: 2, customer: "Noah", total: 85, paid: false },
+			{ id: 3, customer: "Priya", total: 140, paid: true },
+			{ id: 4, customer: "Eli", total: 95, paid: true },
+		];
+
+		function firstPaidOrder(orders) {
+			let firstPaidOrder = {};
+			for (let i = 0; i < orders.length; i++) {
+				let customer = orders[i].customer;
+				let total = orders[i].total;
+				let paid = orders[i].paid;
+				if (paid && total > 100) {
+					firstPaidOrder = {
+						customer,
+						index: i,
+					};
+					return firstPaidOrder;
+				}
+			}
+			return null;
+		}
+		// console.log(firstPaidOrder(orders));
+	}
+
+	{
+		// Return an object containing the name and index of the most expensive product that is in stock.
+		const products = [
+			{ id: 1, name: "Laptop", price: 900, inStock: true },
+			{ id: 2, name: "Mouse", price: 40, inStock: false },
+			{ id: 3, name: "Keyboard", price: 120, inStock: true },
+			{ id: 4, name: "Monitor", price: 300, inStock: true },
+		];
+		function mostExpensiveProduct(products) {
+			let result = {};
+			let highestPrice = null;
+			for (let i = 0; i < products.length; i++) {
+				let name = products[i].name;
+				let inStock = products[i].inStock;
+				let price = products[i].price;
+				if (inStock && (highestPrice === null || price > highestPrice)) {
+					highestPrice = price;
+					result = {
+						name,
+						index: i,
+					};
+				}
+			}
+			return result;
+		}
+		// console.log(mostExpensiveProduct(products));
+	}
+
+	{
+		// Return an object containing the name, index, and score of the active candidate with the highest score.
+		const candidates = [
+			{ id: 1, name: "Maya", score: 82, active: true },
+			{ id: 2, name: "Noah", score: 91, active: false },
+			{ id: 3, name: "Priya", score: 88, active: true },
+			{ id: 4, name: "Eli", score: 95, active: true },
+		];
+		function activeCandidate(candidates) {
+			let result = {};
+			let highestScore = null;
+			for (let i = 0; i < candidates.length; i++) {
+				let name = candidates[i].name;
+				let score = candidates[i].score;
+				let active = candidates[i].active;
+				if (active && (highestScore === null || score > highestScore)) {
+					highestScore = score;
+					result = {
+						name,
+						index: i,
+						score,
+					};
+				}
+			}
+			return result;
+		}
+		// console.log(activeCandidate(candidates));
+	}
+
+	{
+		// Return an object containing the customer, index, and total of the complete order with the lowest total.
+		const orders = [
+			{ id: 1, customer: "Maya", total: 120, status: "complete" },
+			{ id: 2, customer: "Noah", total: 85, status: "pending" },
+			{ id: 3, customer: "Priya", total: 140, status: "complete" },
+			{ id: 4, customer: "Eli", total: 95, status: "complete" },
+			{ id: 5, customer: "Ava", total: 160, status: "cancelled" },
+		];
+		function completeOrderLowestTotal(orders) {
+			let result = {};
+			let lowestTotal = null;
+			for (let i = 0; i < orders.length; i++) {
+				let customer = orders[i].customer;
+				let total = orders[i].total;
+				let status = orders[i].status;
+				if (status === "complete" && (lowestTotal === null || total < lowestTotal)) {
+					lowestTotal = total;
+					result = {
+						customer,
+						index: i,
+						total,
+					};
+				}
+			}
+			return result;
+		}
+		// console.log(completeOrderLowestTotal(orders));
+	}
+
+	{
+		// Return an object containing the username and index of the first active user whose username has already appeared earlier in the array.
+		const users = [
+			{ id: 1, username: "maya", active: true },
+			{ id: 2, username: "noah", active: false },
+			{ id: 3, username: "priya", active: true },
+			{ id: 4, username: "maya", active: true },
+			{ id: 5, username: "noah", active: true },
+		];
+		function firstActiveUser(users) {
+			let result = {};
+			let seen = new Set();
+			for (let i = 0; i < users.length; i++) {
+				let username = users[i].username;
+				let active = users[i].active;
+				if (active && seen.has(username)) {
+					result = {
+						username,
+						index: i,
+					};
+					return result;
+				}
+				seen.add(username);
+			}
+			return null;
+		}
+		// console.log(firstActiveUser(users));
+	}
+
+	{
+		// Return the type of the successful event that appears most often.
+		const events = [
+			{ id: 1, type: "click", successful: true },
+			{ id: 2, type: "submit", successful: false },
+			{ id: 3, type: "click", successful: true },
+			{ id: 4, type: "view", successful: true },
+			{ id: 5, type: "click", successful: true },
+			{ id: 6, type: "view", successful: true },
+		];
+		function successfulEvent(events) {
+			let frequency = {};
+			let highestCount = 0;
+			let freqType = null;
+			for (const event of events) {
+				if (event.successful) {
+					if (frequency[event.type]) {
+						frequency[event.type]++;
+					} else {
+						frequency[event.type] = 1;
+					}
+
+					if (frequency[event.type] > highestCount) {
+						highestCount = frequency[event.type];
+						freqType = event.type;
+					}
+				}
+			}
+			return freqType;
+		}
+		// console.log(successfulEvent(events));
 	}
 }
 initPracticeDSA();
