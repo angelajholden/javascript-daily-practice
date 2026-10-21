@@ -1,5 +1,24 @@
 function amazonSdePracticeTwo() {
 	{
+		// const strs = ["flower", "flow", "flight"];
+		// const strs = ["flower", "flower", "flower"];
+		// const strs = ["dog", "racecar", "car"];
+		const strs = ["flower", "flow"];
+		function comparePrefixes(strs) {
+			for (let i = 0; i < strs[0].length; i++) {
+				const word = strs[0][i];
+				for (let x = 1; x < strs.length; x++) {
+					if (word !== strs[x][i]) {
+						return strs[0].slice(0, i);
+					}
+				}
+			}
+			return strs[0];
+		}
+		console.log(comparePrefixes(strs));
+	}
+
+	{
 		// reverse a string
 		const text = "practice makes patterns easier";
 		function reverseAString(text) {
@@ -21,7 +40,7 @@ function amazonSdePracticeTwo() {
 
 			return string;
 		}
-		console.log(reverseAString(text));
+		// console.log(reverseAString(text));
 	}
 
 	{
