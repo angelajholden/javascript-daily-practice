@@ -1,13 +1,61 @@
 # Daily JavaScript Practice
 
-## TOC
+A collection of JavaScript exercises, data transformations, and data structures and algorithms (DSA) practice. I use this repository to work through problems, try different approaches, explain my reasoning, and practice during livestreams.
 
-1. [Transform Data into a New Array with .map()](js/01_map.js)
-2. [Use Ternary Operators and .map()](js/02_ternary-operators.js)
-3. [Filter Items then Create New Array with .map()](js/03_filter.js)
-4. [Use .map() with Callback Params, Part 1](js/04_map-callback-values.js)
-5. [Use .map() with Callback Params, Part 2](js/05_map-callback-params.js)
-6. [Use .map() with Callback Params, Part 3](js/06_map-callback-params.js)
+**This is a learning workspace, not a production application.** Some files contain multiple iterations of an exercise, commented-out experiments, and console output used while working through a problem. Those notes are intentionally preserved to show the practice process.
+
+## Getting started
+
+No package installation or build step is required.
+
+1. Clone this repository, or download the files.
+2. Open `index.html` in a browser (a local development server such as VS Code Live Server is also fine).
+3. Open the browser's developer tools and select the **Console** tab.
+4. In `index.html`, change the `<script type="module" src="./js/19_amazon_sde_practice.js"></script>` reference to the exercise you want to run.
+5. Save the file and reload the page. To see a particular result, uncomment the relevant `console.log()` in that exercise (where applicable).
+
+For standalone JavaScript exercises that don't rely on browser APIs, you can also run them using Node.js (for example, `node js/20_reverse_string.js`). Some earlier exercises manipulate the DOM and should be run in a browser.
+
+### How I use this repository on livestreams
+
+I typically work through one problem at a time, describe the expected input and output, whiteboard or talk through the approach, and test the solution in the browser console. I sometimes leave previous attempts and explanatory comments in place for discussion and review. A script being referenced by `index.html` does not mean all examples in that file will print output—many example calls are commented out.
+
+## Exercise index
+
+The files are numbered roughly in the order they were added; the categories below make them easier to locate. Names and original practice code have been retained.
+
+### Array methods and transformations
+
+- [01 — map](js/01_map.js)
+- [02 — ternary operators](js/02_ternary-operators.js)
+- [03 — filter](js/03_filter.js)
+- [04 — map callback values](js/04_map-callback-values.js)
+- [05 — map callback params](js/05_map-callback-params.js)
+- [06 — map callback params](js/06_map-callback-params.js)
+- [07 — reduce grouping](js/07_reduce-grouping.js)
+- [08 — reduce challenge](js/08_reduce-challenge.js)
+- [09 — reduce status grouping](js/09_reduce-status-grouping.js)
+- [10 — transform refactor](js/10_transform-refactor.js)
+- [11 — transform dashboard data](js/11_transform-dashboard-data.js)
+- [12 — js practice](js/12_js-practice.js)
+- [13 — sort map render](js/13_sort-map-render.js)
+- [14 — sort map render](js/14_sort-map-render.js)
+
+### String and DSA practice
+
+- [15 — reverse a string](js/15_reverse-a-string.js)
+- [16 — dsa practice](js/16_dsa-practice.js)
+- [17 — dsa practice](js/17_dsa-practice.js)
+
+### Interview and additional practice
+
+- [18 — amazon sde prctice](js/18_amazon-sde-prctice.js)
+- [19 — amazon sde practice](js/19_amazon_sde_practice.js)
+- [20 — reverse string](js/20_reverse_string.js)
+
+## Reference notes
+
+The following notes and vocabulary are a quick reference while solving and explaining problems.
 
 ## Notes
 
